@@ -30,7 +30,5 @@ fclean: clean
 	rm $(LIBFT)
 	rm $(PRINTF)
 	rm $(NAME)
-	rm libft/$(LIBFT)
-	rm printf/$(PRINTF)
 
 re : fclean all

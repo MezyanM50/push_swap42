@@ -7,10 +7,11 @@ typedef struct s_stack
 	int	value;
 	int	index;
 	struct s_stack *next;
-}	t_stack
+}	t_stack;
 
 # include <stdio.h>
 # include "printf/ft_printf.h"
 # include "libft/libft.h"
+#include <limits.h>
 
 #endif

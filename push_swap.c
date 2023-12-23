@@ -23,15 +23,14 @@ void error_detect()
 
 void error_hunter(int i, char **s)
 {
-	int tmp;
-	int j;
+	long tmp;
 
 	while (s[i])
 	{
 		if (is_number(s[i]))
 			error_detect();
 		tmp = ft_atoi(s[i]);
-		if (tmp > INT_MAX || tmp < INT_MIN)
+		if (tmp > 2147483647 || tmp < -2147483648)
 			error_detect();
 		i++;
 	}
