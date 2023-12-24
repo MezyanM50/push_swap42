@@ -4,7 +4,7 @@ LIBFT = libft.a
 
 PRINTF = libftprintf.a
 
-SRC_FILE = push_swap.c
+SRC_FILE = push_swap.c t_list.c
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -16,7 +16,7 @@ $(NAME): $(OBJ)
 	make -C libft
 	cp libft/libft.a .
 	make -C printf
-	cp printf/libftprintf.a	.
+	cp printf/libftprintf.a .
 	gcc $(CFLAGS) $(OBJ) -I include $(LIBFT) $(PRINTF) -o $(NAME)
 
 clean:
@@ -27,8 +27,6 @@ clean:
 fclean: clean
 	make fclean -C libft
 	make fclean -C printf
-	rm $(LIBFT)
-	rm $(PRINTF)
 	rm $(NAME)
 
 re : fclean all
