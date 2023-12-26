@@ -65,14 +65,14 @@ void pa(t_stack **a,t_stack **b)
 {
     if (!push(a,b))
         return ;
-    printf("pa\n");
+    ft_printf("pa\n");
 }
 
 void pb(t_stack **a,t_stack **b)
 {
     if (!push(b,a))
         return ;
-    printf("pb\n");
+    ft_printf("pb\n");
 }
 
 int rotate(t_stack **a)
@@ -96,19 +96,59 @@ void ra(t_stack **a)
 {
     if (!rotate(a))
         return ;
-    printf("ra\n");
+    ft_printf("ra\n");
 }
 
 void rb(t_stack **b)
 {
     if (!rotate(b))
         return ;
-    printf("rb\n");
+    ft_printf("rb\n");
 }
 
 void rr(t_stack **b, t_stack **a)
 {
     if (!rotate(a) || !rotate(b))
         return ;
-    printf("rr\n");
+    ft_printf("rr\n");
+}
+
+int reverse_rotate(t_stack **a)
+{
+	t_stack *head;
+	t_stack *tail;
+	t_stack *tmp;
+
+	if (listsize(*a) < 2)
+		return (0);
+	head = (*a);
+	tmp = (*a);
+	tail = lastlist(head);
+	while (head->next->next)
+		head = head->next;
+	head->next = NULL;
+	tail->next = tmp;
+	(*a) = tail;
+	return (1);
+}
+
+void rra(t_stack **a)
+{
+	if (!reverse_rotate(a))
+		return ;
+	ft_printf("rra\n");
+}
+
+void rrb(t_stack **b)
+{
+	if (!reverse_rotate(b))
+		return ;
+	ft_printf("rrb\n");
+}
+
+void rrr(t_stack **a,t_stack **b)
+{
+	if (!reverse_rotate(a) || !reverse_rotate(b))
+		return ;
+	ft_printf("rrr\n");
 }
