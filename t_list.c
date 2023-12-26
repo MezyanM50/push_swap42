@@ -63,6 +63,7 @@ int listsize(t_stack *a)
 		a = a->next;
 		i++;
 	}
+	return (i);
 }
 
 

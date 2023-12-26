@@ -24,21 +24,21 @@ void sa(t_stack **a)
 {
     if (!swap(a))
         return ;
-    ft_printf("sa");
+    ft_printf("sa\n");
 }
 
 void sb(t_stack **b)
 {
     if(!swap(b))
         return ;
-    ft_printf("sa");
+    ft_printf("sa\n");
 }
 
 void ss(t_stack **a,t_stack **b)
 {
     if (!swap(a) || !swap(b))
         return ;
-    ft_printf("ss");
+    ft_printf("ss\n");
 }
 
 int push(t_stack **a,t_stack **b)
@@ -54,9 +54,9 @@ int push(t_stack **a,t_stack **b)
     list_addfront(new, a);
     tmp = (*b);
     (*b) = (*b)->next;
-    tmp->index = NULL;
+    tmp->index = 0;
     tmp->next = NULL;
-    tmp->value = NULL;
+    tmp->value = 0;
     free(tmp);
     return (1);
 }
@@ -65,14 +65,14 @@ void pa(t_stack **a,t_stack **b)
 {
     if (!push(a,b))
         return ;
-    printf("pa");
+    printf("pa\n");
 }
 
 void pb(t_stack **a,t_stack **b)
 {
     if (!push(b,a))
         return ;
-    printf("pb");
+    printf("pb\n");
 }
 
 int rotate(t_stack **a)
@@ -96,19 +96,19 @@ void ra(t_stack **a)
 {
     if (!rotate(a))
         return ;
-    printf("ra");
+    printf("ra\n");
 }
 
 void rb(t_stack **b)
 {
     if (!rotate(b))
         return ;
-    printf("rb");
+    printf("rb\n");
 }
 
 void rr(t_stack **b, t_stack **a)
 {
     if (!rotate(a) || !rotate(b))
         return ;
-    printf("rr");
+    printf("rr\n");
 }
