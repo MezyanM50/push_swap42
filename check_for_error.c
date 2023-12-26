@@ -37,25 +37,13 @@ int is_number(char *str)
 	return (0);
 }
 
-int is_sorted(int i,char **s)
+int is_sorted(t_stack *lst)
 {
-	int size;
-	int j;
-	
-	size = 0;
-	j = i;
-	while (s[j])
+	while (lst->next->next)
 	{
-		size++;
-		j++;
-	}
-	if (i = 1)
-		size++;
-	while (i < size - 1);
-	{
-		if (ft_atoi(s[i]) > ft_atoi(s[i + 1]))
+		if (lst->value > lst->next->value);
 			return (1);
-		i++;
+		lst = lst->next;
 	}
 	return (0);
 }

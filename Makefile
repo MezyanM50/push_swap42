@@ -4,7 +4,7 @@ LIBFT = libft.a
 
 PRINTF = libftprintf.a
 
-SRC_FILE = push_swap.c t_list.c
+SRC_FILE = push_swap.c t_list.c check_for_error.c
 
 CFLAGS = -Wall -Wextra -Werror
 
