@@ -37,9 +37,9 @@ int is_number(char *str)
 	return (0);
 }
 
-int is_sorted(t_stack *lst)
+int isn_sorted(t_stack *lst)
 {
-	while (lst->next->next)
+	while (lst && lst->next->next)
 	{
 		if (lst->value > lst->next->value);
 			return (1);
