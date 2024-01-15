@@ -5,10 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 15:44:04 by idhaimy           #+#    #+#             */
-/*   Updated: 2024/01/15 12:05:43 by mmezyan          ###   ########.fr       */
+/*   Created: 2024/01/15 14:45:29 by mmezyan           #+#    #+#             */
+/*   Updated: 2024/01/15 14:45:30 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -54,6 +56,7 @@ void				sa(t_stack **lst, int is_print);
 void				sb(t_stack **lst, int is_print);
 void				ss(t_stack **lst_a, t_stack **lst_b);
 
+void push_any(t_stack **lst1,t_stack **lst2);
 void pa(t_stack **lst_a,t_stack **lst_b);
 void pb(t_stack **lst_a,t_stack **lst_b);
 
@@ -67,8 +70,21 @@ void				rrb(t_stack **lst_b, int is_print);
 void				rrr(t_stack **lst_a, t_stack **lst_b);
 
 void main_algo(t_stack **lst_a, t_stack **lst_b);
-void shark_sort(t_stack **lst_a,t_stack **lst_b);
+void long_sort(t_stack **lst_a,t_stack **lst_b);
 int get_max(t_stack *lst);
 void initiate_index(t_stack **lst_b);
+void selection_sort(t_chunk *chunk,int size);
+int get_range(int size);
+void fill_and_sort_arr(t_chunk *chunk,t_stack **lst_a);
+void initiate_index(t_stack **lst_b);
+t_stack *get_node_max(t_stack **lst_b);
+void go_back_to_a(t_stack **lst_a,t_stack **lst_b);
+int get_min(t_stack *lst);
+void sort_three(t_stack **lst_a);
+void sort_four_util(t_stack **lst_a,t_stack **lst_b);
+void sort_four(t_stack **lst_a,t_stack **lst_b);
+void sort_five_util(t_stack **lst_a,t_stack **lst_b);
+void sort_five(t_stack **lst_a,t_stack **lst_b);
+void main_algo(t_stack **lst_a, t_stack **lst_b);
 
 #endif
