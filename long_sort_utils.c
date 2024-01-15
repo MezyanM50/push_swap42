@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:44:39 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/15 14:55:07 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/15 17:03:22 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ void	selection_sort(t_chunk *chunk, int size)
 		j = 0;
 		while (j < i)
 		{
-			if (chunk->sorted_arr[i] < chunk->sorted_arr[j])
+			if (chunk->array[i] < chunk->array[j])
 			{
-				tmp = chunk->sorted_arr[i];
-				chunk->sorted_arr[i] = chunk->sorted_arr[j];
-				chunk->sorted_arr[j] = tmp;
+				tmp = chunk->array[i];
+				chunk->array[i] = chunk->array[j];
+				chunk->array[j] = tmp;
 			}
 			j++;
 		}
@@ -53,13 +53,13 @@ void	fill_and_sort_arr(t_chunk *chunk, t_stack **lst_a)
 	int		i;
 
 	i = 0;
-	chunk->sorted_arr = (int *)malloc(list_size(*lst_a) * sizeof(int));
-	if (!chunk->sorted_arr)
+	chunk->array = (int *)malloc(list_size(*lst_a) * sizeof(int));
+	if (!chunk->array)
 		return ;
 	tmp = *lst_a;
 	while (tmp)
 	{
-		chunk->sorted_arr[i++] = tmp->value;
+		chunk->array[i++] = tmp->value;
 		tmp = tmp->next;
 	}
 	selection_sort(chunk, list_size(*lst_a));

@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:44:46 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/15 16:52:37 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/15 17:03:22 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,14 @@ void	move_chunk(int *start, int *end, int size)
 void	sort_condition(t_stack **lst_a, t_stack **lst_b, t_chunk *chunk,
 		int size)
 {
-	if ((*lst_a)->value <= chunk->sorted_arr[chunk->start])
+	if ((*lst_a)->value <= chunk->array[chunk->start])
 	{
 		pb(lst_a, lst_b);
 		rb(lst_b, 1);
 		move_chunk(&chunk->start, &chunk->end, size);
 	}
-	else if ((*lst_a)->value > chunk->sorted_arr[chunk->start]
-		&& (*lst_a)->value <= chunk->sorted_arr[chunk->end])
+	else if ((*lst_a)->value > chunk->array[chunk->start]
+		&& (*lst_a)->value <= chunk->array[chunk->end])
 	{
 		pb(lst_a, lst_b);
 		if (list_size((*lst_b)) && (*lst_b)->next
@@ -89,4 +89,5 @@ void	long_sort(t_stack **lst_a, t_stack **lst_b)
 	}
 	initiate_index(lst_b);
 	go_back_to_a(lst_a, lst_b);
+	free(chunk.array);
 }

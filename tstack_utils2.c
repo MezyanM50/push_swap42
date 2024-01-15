@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:46:02 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/15 15:36:29 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/15 17:04:00 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,6 @@ int	free_list(t_stack **lst)
 		free(tmp);
 	}
 	return (1);
-}
-
-void	print_stack(t_stack *lst)
-{
-	printf("| %-10s | %-5s | %-5s | %-5s |\n", "Value", "Index", "After Middle",
-		"Cost");
-	printf("|------------|-------|--------------|-------|\n");
-	while (lst)
-	{
-		printf("| %-10d | %-5d | %-12s |\n", lst->value, lst->index,
-			lst->is_after_middle ? "Yes" : "No");
-		lst = lst->next;
-	}
-	printf("\n");
 }
 
 char	**allocate_str(char **argv, int argc)

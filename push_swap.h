@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:45:29 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/15 16:56:15 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/15 17:03:22 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct s_chunk
 	int				n;
 	int				start;
 	int				end;
-	int				*sorted_arr;
+	int				*array;
 }					t_chunk;
 
 long				ft_new_atoi(const char *str);

@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:45:17 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/15 16:56:15 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/15 16:58:03 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,5 @@ int	main(int argc, char **argv)
 	if (is_list_sorted(stack_a) && free_list(&stack_a))
 		return (0);
 	sort_algo(&stack_a, &stack_b);
-	
 	free_list(&stack_a);
 }
