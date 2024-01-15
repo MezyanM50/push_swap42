@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:45:08 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/15 14:58:47 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/15 16:54:23 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	check_for_error(char **str)
 		if (ft_new_atoi(str[i]) > INT_MAX || ft_new_atoi(str[i]) < INT_MIN)
 		{
 			free_tab(str);
-			print_error("Invalid Argument");
+			print_error("Error");
 		}
 		i++;
 	}

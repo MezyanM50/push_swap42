@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:45:29 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/15 15:38:32 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/15 16:56:15 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void				rra(t_stack **lst_a, int is_print);
 void				rrb(t_stack **lst_b, int is_print);
 void				rrr(t_stack **lst_a, t_stack **lst_b);
 
-void				main_algo(t_stack **lst_a, t_stack **lst_b);
+void				sort_algo(t_stack **lst_a, t_stack **lst_b);
 void				long_sort(t_stack **lst_a, t_stack **lst_b);
 int					get_max(t_stack *lst);
 void				initiate_index(t_stack **lst_b);
@@ -81,6 +81,6 @@ void				sort_four_util(t_stack **lst_a, t_stack **lst_b);
 void				sort_four(t_stack **lst_a, t_stack **lst_b);
 void				sort_five_util(t_stack **lst_a, t_stack **lst_b);
 void				sort_five(t_stack **lst_a, t_stack **lst_b);
-void				main_algo(t_stack **lst_a, t_stack **lst_b);
+void				sort_algo(t_stack **lst_a, t_stack **lst_b);
 
 #endif

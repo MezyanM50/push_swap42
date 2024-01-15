@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:45:17 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/15 16:05:52 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/15 16:56:15 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	if (argc < 2 || (argc == 2 && !argv[1][0]))
-		print_error("arg not valid");
+		print_error("Error");
 	if (argc == 2)
 		str = ft_split(argv[1], ' ');
 	else
@@ -66,5 +66,7 @@ int	main(int argc, char **argv)
 	fill_stack(str, &stack_a);
 	if (is_list_sorted(stack_a) && free_list(&stack_a))
 		return (0);
-	main_algo(&stack_a, &stack_b);
+	sort_algo(&stack_a, &stack_b);
+	
+	free_list(&stack_a);
 }

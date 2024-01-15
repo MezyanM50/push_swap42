@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:45:41 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/15 15:37:24 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/15 16:56:15 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,9 @@ void	sort_five(t_stack **lst_a, t_stack **lst_b)
 		tmp = tmp->next;
 	}
 	sort_five_util(lst_a, lst_b);
-	//(void)lst_b;
 }
 
-void	main_algo(t_stack **lst_a, t_stack **lst_b)
+void	sort_algo(t_stack **lst_a, t_stack **lst_b)
 {
 	(void)lst_b;
 	if (list_size(*lst_a) == 2)
