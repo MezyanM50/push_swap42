@@ -1,32 +1,40 @@
+
+
+
+SRCM	= push_swap.c parsing.c utils.c stack_utils.c sort.c long_sort.c
+OBJM	= ${SRCM:.c=.o}
+
 NAME = push_swap
 
-LIBFT = libft.a
+CFLAGS	= -Wall -Werror -Wextra -g -fsanitize=address 
+CC		= cc
+LIBFTA 	= ./includes/libft/libft.a
 
-PRINTF = libftprintf.a
+all : ${NAME}
 
-SRC_FILE = push_swap.c t_list.c check_for_error.c
+${LIBFTA} : 
+	make -C includes/libft
 
-CFLAGS = -Wall -Wextra -Werror
+${NAME} : ${SRCM} ${LIBFTA}
+	${CC} ${CFLAGS} ${SRCM} ${LIBFTA} -o ${NAME}
 
-OBJ = ${SRC_FILE:.c=.o}
+clean :
+	rm -f {OBJM}
 
-all: $(NAME)
-
-$(NAME): $(OBJ)
-	make -C libft
-	cp libft/libft.a .
-	make -C printf
-	cp printf/libftprintf.a .
-	gcc $(CFLAGS) $(OBJ) -I include $(LIBFT) $(PRINTF) -o $(NAME)
-
-clean:
-	make clean -C libft
-	make clean -C printf
-	rm $(OBJ)
-
-fclean: clean
-	make fclean -C libft
-	make fclean -C printf
-	rm $(NAME)
+fclean : clean
+	rm -f ${NAME}
 
 re : fclean all
+	
+
+run :  
+	./push_swap 42 140 61 52 104 45 71 55 9 
+
+#make status arg="4 5 2"
+status : 
+	./push_swap $(arg) | ./checker_Mac $(arg)
+
+
+#make count arg="34 2 1"
+count : 
+	./push_swap $(arg) | wc -l

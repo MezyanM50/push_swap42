@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:34:42 by mmezyan           #+#    #+#             */
-/*   Updated: 2023/12/26 14:15:40 by mmezyan          ###   ########.fr       */
+/*   Updated: 2023/11/06 18:06:52 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		ft_toupper(int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strchr(const char *s, int c);
 void	ft_bzero(void *s, size_t n);
-long	ft_atoi(const char *str);
+int		ft_atoi(const char *str);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);

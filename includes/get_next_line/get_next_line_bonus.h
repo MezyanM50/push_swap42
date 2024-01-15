@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 17:13:02 by mmezyan           #+#    #+#             */
-/*   Updated: 2023/12/26 14:15:22 by mmezyan          ###   ########.fr       */
+/*   Created: 2023/11/20 12:04:41 by mmezyan           #+#    #+#             */
+/*   Updated: 2023/11/20 12:16:19 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
-long	ft_atoi(const char *str)
-{
-	int					i;
-	int					s;
-	unsigned long		r;
+# include <unistd.h>
+# include <stdlib.h>
 
-	i = 0;
-	s = 1;
-	r = 0;
-	while (str[i] && (str[i] == 32 || (str[i] >= 9 && str[i] <= 13)))
-		i++;
-	if (str[i] && (str[i] == '-' || str[i] == '+'))
-	{
-		if (str[i] == '-')
-			s *= -1;
-		i++;
-	}
-	while (str[i] && ft_isdigit(str[i]))
-	{
-		r = (r * 10) + (str[i] - 48);
-		i++;
-	}
-	return (r * s);
-}
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
+
+char	*ft_strjoin(char *buf, char *full_line);
+size_t	ft_strlen(const char *str);
+char	*read_from_fd(int fd, char *buf);
+char	*get_next_line(int fd);
+int		check_newline(char *str);
+char	*extract_line(char *buf);
+char	*clean(char *buf);
+#endif

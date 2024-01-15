@@ -1,41 +1,76 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/09 15:45:05 by idhaimy           #+#    #+#             */
+/*   Updated: 2024/01/15 12:02:51 by mmezyan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-
-void fill_stack(int ac,char **s,t_stack **lst)
+int	check_for_double(t_stack *lst)
 {
-	t_stack *new;
-	int i;
+	t_stack	*tmp;
 
-	i = 0;
-	if (ac == 2)
-		i = 1;
-	while (s[i])
+	while (lst)
 	{
-		new = listnew(ft_atoi(s[i]), i);
-		list_addback(new, lst);
-		i++;
-	}
-}
-
-int main(int argc,char **argv)
-{
-	t_stack	*a;
-	t_stack	*b;
-
-	a = NULL;
-	b = NULL;
-	if (argc > 1)
-	{
-		if (argc == 2)
+		tmp = lst->next;
+		while (tmp)
 		{
-			argv = ft_split(argv[1], ' ');
-			error_hunter(0,argv);
+			if (lst->value == tmp->value)
+				return (1);
+			tmp = tmp->next;
 		}
-		else
-		{
-			error_hunter(1,argv);
-		}
-		fill_stack(argc,argv,&a);
+		lst = lst->next;
 	}
 	return (0);
+}
+
+void	fill_stack(char **str, t_stack **stack_a)
+{
+	t_stack	*new;
+	int		i;
+
+	i = 0;
+	while (str[i])
+	{
+		new = create_new(ft_new_atoi(str[i]), i);
+		add_back(stack_a, new);
+		if (check_for_double(*stack_a) == 1 && free_tab(str)
+			&& free_list(stack_a))
+			print_error("Invalid Argument");
+		i++;
+	}
+	free_tab(str);
+}
+
+int	main(int argc, char **argv)
+{
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+	char	**str;
+
+	stack_a = NULL;
+	stack_b = NULL;
+	if (argc < 2 || (argc == 2 && !argv[1][0]))
+		print_error("arg not valid");
+	if (argc == 2)
+		str = ft_split(argv[1], ' ');
+	else
+		str = allocate_str(argv, argc);
+	check_for_error(str);
+	fill_stack(str, &stack_a);
+	if (is_list_sorted(stack_a) && free_list(&stack_a))
+		return (0);
+	// print_stack(stack_a);
+	  main_algo(&stack_a,&stack_b);
+	//   print_stack(stack_b);
+	//   printf("************************after************************\n");
+	  // print_stack(stack_a);
+	
+	// system("leaks push_swap");
 }
