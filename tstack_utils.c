@@ -6,12 +6,9 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:45:58 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/15 14:45:59 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/15 15:35:15 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-
 
 #include "push_swap.h"
 
@@ -70,5 +67,3 @@ int	list_size(t_stack *lst)
 	}
 	return (i);
 }
-
-

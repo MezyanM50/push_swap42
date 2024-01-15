@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:45:08 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/15 14:45:09 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/15 14:58:47 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,14 @@
 void	print_error(char *str)
 {
 	write(2, str, ft_strlen(str));
-	// system("leaks push_swap");
 	exit(0);
 }
 
-long 	ft_new_atoi(const char *str)
+long	ft_new_atoi(const char *str)
 {
-	int			i;
-	long 	res;
-	int			sign;
+	int		i;
+	long	res;
+	int		sign;
 
 	i = 0;
 	res = 0;
@@ -75,14 +74,14 @@ void	check_for_error(char **str)
 	}
 }
 
-int is_list_sorted(t_stack *lst)
+int	is_list_sorted(t_stack *lst)
 {
-	t_stack *next;
+	t_stack	*next;
 
 	while (lst->next)
 	{
 		next = lst->next;
-		if(lst->value > next->value)
+		if (lst->value > next->value)
 			return (0);
 		lst = lst->next;
 	}

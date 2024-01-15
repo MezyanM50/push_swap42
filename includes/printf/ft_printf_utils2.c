@@ -6,17 +6,16 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:22:47 by mmezyan           #+#    #+#             */
-/*   Updated: 2023/11/27 15:22:48 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/15 16:07:08 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "ft_printf.h"
 
 int	ft_put_x(unsigned int nb)
 {
 	char	*a;
 	char	s[32];
 	int		i;
-	
+
 	if (nb == 0)
 		return (ft_putchar('0'));
 	i = 0;
@@ -28,7 +27,7 @@ int	ft_put_x(unsigned int nb)
 	}
 	s[i++] = a[nb];
 	s[i] = '\0';
-	ft_strrev(s,i);
+	ft_strrev(s, i);
 	return (i);
 }
 
@@ -49,7 +48,7 @@ int	ft_put_gx(unsigned int nb)
 	}
 	s[i++] = a[nb];
 	s[i] = '\0';
-	ft_strrev(s,i);
+	ft_strrev(s, i);
 	return (i);
 }
 
@@ -70,7 +69,6 @@ int	ft_putpointer(unsigned long n)
 		n /= 16;
 	}
 	s[i] = '\0';
-	ft_strrev(s,i);
+	ft_strrev(s, i);
 	return (i + 2);
 }
-

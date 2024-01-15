@@ -6,11 +6,9 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:45:17 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/15 14:45:18 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/15 16:05:52 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "push_swap.h"
 
@@ -68,11 +66,5 @@ int	main(int argc, char **argv)
 	fill_stack(str, &stack_a);
 	if (is_list_sorted(stack_a) && free_list(&stack_a))
 		return (0);
-	// print_stack(stack_a);
-	  main_algo(&stack_a,&stack_b);
-	//   print_stack(stack_b);
-	//   printf("************************after************************\n");
-	  // print_stack(stack_a);
-	
-	// system("leaks push_swap");
+	main_algo(&stack_a, &stack_b);
 }

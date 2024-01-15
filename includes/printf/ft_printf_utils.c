@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 13:28:48 by mmezyan           #+#    #+#             */
-/*   Updated: 2023/11/27 15:22:13 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/15 16:06:37 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int	ft_putnbr(int n)
 	return (count);
 }
 
-void ft_strrev(char *s, int len)
+void	ft_strrev(char *s, int len)
 {
 	while (len--)
 		write(1, &s[len], 1);

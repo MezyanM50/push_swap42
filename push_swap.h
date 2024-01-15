@@ -6,11 +6,9 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:45:29 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/15 14:45:30 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/15 15:38:32 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -29,16 +27,15 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
-
 typedef struct s_chunk
 {
-	int	n;
-	int	start;
-	int	end;
-	int *sorted_arr;
-}	t_chunk;
+	int				n;
+	int				start;
+	int				end;
+	int				*sorted_arr;
+}					t_chunk;
 
-long 			ft_new_atoi(const char *str);
+long				ft_new_atoi(const char *str);
 void				print_error(char *str);
 int					free_tab(char **tab);
 void				check_for_error(char **str);
@@ -50,16 +47,15 @@ int					list_size(t_stack *lst);
 int					free_list(t_stack **lst);
 void				print_stack(t_stack *lst);
 char				**allocate_str(char **argv, int argc);
-int is_list_sorted(t_stack *lst);
+int					is_list_sorted(t_stack *lst);
 
 void				sa(t_stack **lst, int is_print);
 void				sb(t_stack **lst, int is_print);
 void				ss(t_stack **lst_a, t_stack **lst_b);
 
-void push_any(t_stack **lst1,t_stack **lst2);
-void pa(t_stack **lst_a,t_stack **lst_b);
-void pb(t_stack **lst_a,t_stack **lst_b);
-
+void				push_any(t_stack **lst1, t_stack **lst2);
+void				pa(t_stack **lst_a, t_stack **lst_b);
+void				pb(t_stack **lst_a, t_stack **lst_b);
 
 void				ra(t_stack **lst_a, int is_print);
 void				rb(t_stack **lst_b, int is_print);
@@ -69,22 +65,22 @@ void				rra(t_stack **lst_a, int is_print);
 void				rrb(t_stack **lst_b, int is_print);
 void				rrr(t_stack **lst_a, t_stack **lst_b);
 
-void main_algo(t_stack **lst_a, t_stack **lst_b);
-void long_sort(t_stack **lst_a,t_stack **lst_b);
-int get_max(t_stack *lst);
-void initiate_index(t_stack **lst_b);
-void selection_sort(t_chunk *chunk,int size);
-int get_range(int size);
-void fill_and_sort_arr(t_chunk *chunk,t_stack **lst_a);
-void initiate_index(t_stack **lst_b);
-t_stack *get_node_max(t_stack **lst_b);
-void go_back_to_a(t_stack **lst_a,t_stack **lst_b);
-int get_min(t_stack *lst);
-void sort_three(t_stack **lst_a);
-void sort_four_util(t_stack **lst_a,t_stack **lst_b);
-void sort_four(t_stack **lst_a,t_stack **lst_b);
-void sort_five_util(t_stack **lst_a,t_stack **lst_b);
-void sort_five(t_stack **lst_a,t_stack **lst_b);
-void main_algo(t_stack **lst_a, t_stack **lst_b);
+void				main_algo(t_stack **lst_a, t_stack **lst_b);
+void				long_sort(t_stack **lst_a, t_stack **lst_b);
+int					get_max(t_stack *lst);
+void				initiate_index(t_stack **lst_b);
+void				selection_sort(t_chunk *chunk, int size);
+int					get_range(int size);
+void				fill_and_sort_arr(t_chunk *chunk, t_stack **lst_a);
+void				initiate_index(t_stack **lst_b);
+t_stack				*get_node_max(t_stack **lst_b);
+void				go_back_to_a(t_stack **lst_a, t_stack **lst_b);
+int					get_min(t_stack *lst);
+void				sort_three(t_stack **lst_a);
+void				sort_four_util(t_stack **lst_a, t_stack **lst_b);
+void				sort_four(t_stack **lst_a, t_stack **lst_b);
+void				sort_five_util(t_stack **lst_a, t_stack **lst_b);
+void				sort_five(t_stack **lst_a, t_stack **lst_b);
+void				main_algo(t_stack **lst_a, t_stack **lst_b);
 
 #endif
