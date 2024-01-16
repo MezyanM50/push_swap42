@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:44:46 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/15 17:03:22 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/16 16:59:42 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ void	go_back_to_a(t_stack **lst_a, t_stack **lst_b)
 		{
 			while ((*lst_b)->value != max->value)
 				rrb(lst_b, 1);
-			pa(lst_a, lst_b);
+			pa(lst_a, lst_b, 1);
 		}
 		else
 		{
 			while ((*lst_b)->value != max->value)
 				rb(lst_b, 1);
-			pa(lst_a, lst_b);
+			pa(lst_a, lst_b, 1);
 		}
 		i++;
 		initiate_index(lst_b);
@@ -54,14 +54,14 @@ void	sort_condition(t_stack **lst_a, t_stack **lst_b, t_chunk *chunk,
 {
 	if ((*lst_a)->value <= chunk->array[chunk->start])
 	{
-		pb(lst_a, lst_b);
+		pb(lst_a, lst_b, 1);
 		rb(lst_b, 1);
 		move_chunk(&chunk->start, &chunk->end, size);
 	}
 	else if ((*lst_a)->value > chunk->array[chunk->start]
 		&& (*lst_a)->value <= chunk->array[chunk->end])
 	{
-		pb(lst_a, lst_b);
+		pb(lst_a, lst_b, 1);
 		if (list_size((*lst_b)) && (*lst_b)->next
 			&& (*lst_b)->value < (*lst_b)->next->value)
 			sb(lst_b, 1);

@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:45:29 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/15 17:03:22 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/16 16:57:51 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "./includes/libft/libft.h"
+# include "./includes/get_next_line/get_next_line.h"
 # include <limits.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -35,6 +36,8 @@ typedef struct s_chunk
 	int				*array;
 }					t_chunk;
 
+int					check_for_double(t_stack *lst);
+void				fill_stack(char **str, t_stack **stack_a);
 long				ft_new_atoi(const char *str);
 void				print_error(char *str);
 int					free_tab(char **tab);
@@ -51,19 +54,19 @@ int					is_list_sorted(t_stack *lst);
 
 void				sa(t_stack **lst, int is_print);
 void				sb(t_stack **lst, int is_print);
-void				ss(t_stack **lst_a, t_stack **lst_b);
+void				ss(t_stack **lst_a, t_stack **lst_b, int is_print);
 
 void				push_any(t_stack **lst1, t_stack **lst2);
-void				pa(t_stack **lst_a, t_stack **lst_b);
-void				pb(t_stack **lst_a, t_stack **lst_b);
+void				pa(t_stack **lst_a, t_stack **lst_b, int is_print);
+void				pb(t_stack **lst_a, t_stack **lst_b, int is_print);
 
 void				ra(t_stack **lst_a, int is_print);
 void				rb(t_stack **lst_b, int is_print);
-void				rr(t_stack **lst_b, t_stack **lst_a);
+void				rr(t_stack **lst_b, t_stack **lst_a, int is_print);
 
 void				rra(t_stack **lst_a, int is_print);
 void				rrb(t_stack **lst_b, int is_print);
-void				rrr(t_stack **lst_a, t_stack **lst_b);
+void				rrr(t_stack **lst_a, t_stack **lst_b, int is_print);
 
 void				sort_algo(t_stack **lst_a, t_stack **lst_b);
 void				long_sort(t_stack **lst_a, t_stack **lst_b);

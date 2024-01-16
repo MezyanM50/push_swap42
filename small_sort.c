@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:45:41 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/15 16:56:15 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/16 16:58:33 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ void	sort_five_util(t_stack **lst_a, t_stack **lst_b)
 {
 	if (is_list_sorted(*lst_a))
 		return ;
-	pb(lst_a, lst_b);
+	pb(lst_a, lst_b, 1);
 	initiate_index(lst_a);
 	sort_four(lst_a, lst_b);
-	pa(lst_a, lst_b);
+	pa(lst_a, lst_b, 1);
 }
 
 void	sort_five(t_stack **lst_a, t_stack **lst_b)

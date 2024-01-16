@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:45:45 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/15 15:36:53 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/16 16:52:44 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	sa(t_stack **lst, int is_print)
 		return ;
 	swap_any(lst);
 	if (is_print)
-		printf("sa\n");
+		write (1, "sa\n", 3);
 }
 
 void	sb(t_stack **lst, int is_print)
@@ -36,14 +36,15 @@ void	sb(t_stack **lst, int is_print)
 		return ;
 	swap_any(lst);
 	if (is_print)
-		printf("sb\n");
+		write(1, "sb\n", 3);
 }
 
-void	ss(t_stack **lst_a, t_stack **lst_b)
+void	ss(t_stack **lst_a, t_stack **lst_b, int is_print)
 {
 	sa(lst_a, 0);
 	sb(lst_b, 0);
-	printf("ss\n");
+	if (is_print)
+		write(1, "ss\n", 3);
 }
 
 void	push_any(t_stack **lst1, t_stack **lst2)

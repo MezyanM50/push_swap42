@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:45:08 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/15 16:54:23 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/16 17:26:06 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,11 @@ void	check_for_error(char **str)
 	int	i;
 
 	i = 0;
+	if (!str[i])
+	{
+		free_tab(str);
+		print_error("Error");
+	}
 	while (str[i])
 	{
 		if (ft_new_atoi(str[i]) > INT_MAX || ft_new_atoi(str[i]) < INT_MIN)
