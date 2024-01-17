@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:46:02 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/17 13:41:20 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/17 16:51:21 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,38 @@ int	free_list(t_stack **lst)
 	}
 	return (1);
 }
+int	must_split(char *s)
+{
+	int i;
+	int count;
+
+	i = 0;
+	count = 0;
+	while (s[i])
+	{
+		if (s[i] == ' ')
+			count++;
+		i++;
+	}
+	if (s[i - 1] == ' ' && !s[i])
+		count--;
+	return (count);
+}
+
+void split_it(char **str, char *s, int j, int size)
+{
+	int i;
+	char **tmp;
+	
+	tmp = ft_split(s, ' ');
+	i = 0;
+	while (tmp[i])
+	{
+		str[j] = tmp[i];
+		i++;
+		j++;
+	}	
+}
 
 char	**alloc_str(char **argv, int argc)
 {
@@ -73,6 +105,7 @@ char	**alloc_str(char **argv, int argc)
 	str = (char **)malloc(sizeof(char *) * argc);
 	while (i < argc)
 	{
+		
 		tmp = ft_strdup(argv[i]);
 		if (!tmp)
 			return (NULL);
