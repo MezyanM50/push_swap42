@@ -6,15 +6,15 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:45:29 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/16 16:57:51 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/17 14:03:32 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "./includes/libft/libft.h"
 # include "./includes/get_next_line/get_next_line.h"
+# include "./includes/libft/libft.h"
 # include <limits.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -49,8 +49,8 @@ void				add_front(t_stack **lst, t_stack *new);
 int					list_size(t_stack *lst);
 int					free_list(t_stack **lst);
 void				print_stack(t_stack *lst);
-char				**allocate_str(char **argv, int argc);
-int					is_list_sorted(t_stack *lst);
+char				**alloc_str(char **argv, int argc);
+int					is_sorted(t_stack *lst);
 
 void				sa(t_stack **lst, int is_print);
 void				sb(t_stack **lst, int is_print);
@@ -86,4 +86,10 @@ void				sort_five_util(t_stack **lst_a, t_stack **lst_b);
 void				sort_five(t_stack **lst_a, t_stack **lst_b);
 void				sort_algo(t_stack **lst_a, t_stack **lst_b);
 
+void				checker(t_stack **stack_a, t_stack **stack_b, int is_print);
+void				finisher(t_stack **stack_a, t_stack **stack_b);
+int					check_operation_util(char *s);
+int					check_operation(char *s);
+void				check_operation_doit(char *s, t_stack **stack_a,
+						t_stack **stack_b);
 #endif

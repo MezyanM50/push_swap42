@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:45:17 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/16 14:36:57 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/17 13:41:55 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 		str = ft_split(argv[1], ' ');
 	else
-		str = allocate_str(argv, argc);
+		str = alloc_str(argv, argc);
 	check_for_error(str);
 	fill_stack(str, &stack_a);
-	if (is_list_sorted(stack_a) && free_list(&stack_a))
+	if (is_sorted(stack_a) && free_list(&stack_a))
 		return (0);
 	sort_algo(&stack_a, &stack_b);
 	free_list(&stack_a);

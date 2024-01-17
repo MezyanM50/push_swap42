@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:45:35 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/16 16:59:12 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/17 13:41:55 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	sort_three(t_stack **lst_a)
 
 void	sort_four_util(t_stack **lst_a, t_stack **lst_b)
 {
-	if (is_list_sorted(*lst_a))
+	if (is_sorted(*lst_a))
 		return ;
 	pb(lst_a, lst_b, 1);
 	sort_three(lst_a);

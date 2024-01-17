@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:46:02 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/16 14:37:05 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/17 13:41:20 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	free_list(t_stack **lst)
 	return (1);
 }
 
-char	**allocate_str(char **argv, int argc)
+char	**alloc_str(char **argv, int argc)
 {
 	int		i;
 	int		j;
