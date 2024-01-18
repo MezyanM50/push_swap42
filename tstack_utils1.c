@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 11:24:55 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/18 11:51:12 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/18 14:33:49 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,6 @@ int	must_split(char *s)
 		i++;
 	}
 	return (count);
-}
-
-void split_it(char **str, char *s, int j, int size)
-{
-	int i;
-	char **tmp;
-	
-	tmp = ft_split(s, ' ');
-	i = 0;
-	while (tmp[i])
-	{
-		str[j] = tmp[i];
-		i++;
-		j++;
-	}
 }
 
 unsigned int    count_args(char **str)

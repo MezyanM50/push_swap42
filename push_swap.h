@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:45:29 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/18 03:31:24 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/18 14:33:44 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ int					free_list(t_stack **lst);
 void				print_stack(t_stack *lst);
 char				**alloc_str(char **argv, int argc);
 int					is_sorted(t_stack *lst);
+unsigned int		count_args(char **str);
 int					must_split(char *s);
-void				split_it(char **str, char *s, int j, int size);
 
 void				sa(t_stack **lst, int is_print);
 void				sb(t_stack **lst, int is_print);

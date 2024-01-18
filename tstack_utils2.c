@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:46:02 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/18 11:25:15 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/18 14:29:22 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,21 +65,23 @@ char	**alloc_str(char **argv, int argc)
 {
 	int		i;
 	int		j;
+	int		k;
 	char	**str;
-	char	*tmp;
+	char	**tmp;
 
 	i = 1;
 	j = 0;
-	str = (char **)malloc(sizeof(char *) * argc);
+
+	str = (char **)malloc(sizeof(char *) * count_args(argv));
 	while (i < argc)
-	{
-		
-		tmp = ft_strdup(argv[i]);
+	{	
+		k = 0;
+		tmp = ft_split(argv[i], ' ');
 		if (!tmp)
 			return (NULL);
-		str[j] = tmp;
+		while (tmp[k])
+			str[j++] = tmp[k++];
 		i++;
-		j++;
 	}
 	str[j] = NULL;
 	return (str);
