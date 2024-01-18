@@ -6,7 +6,7 @@
 #    By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 14:45:00 by mmezyan           #+#    #+#              #
-#    Updated: 2024/01/18 14:34:01 by mmezyan          ###   ########.fr        #
+#    Updated: 2024/01/18 17:40:49 by mmezyan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,16 +47,3 @@ fclean : clean
 
 re : fclean all
 	make re -C ./includes/libft
-	
-
-run :  
-	./push_swap 42 140 61 52 104 45 71 55 9 
-
-#make status arg="4 5 2"
-status : 
-	./push_swap $(arg) | ./checker_Mac $(arg)
-
-
-#make count arg="34 2 1"
-count : 
-	./push_swap $(arg) | wc -l
