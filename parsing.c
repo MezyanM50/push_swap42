@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:45:08 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/17 13:41:55 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/18 15:54:53 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,7 @@ long	ft_new_atoi(const char *str)
 	}
 	if (!str[i])
 		return (2147483650);
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		res = (res * 10) + (str[i] - 48);
-		i++;
-	}
+	res = ft_atoi_helper(str, &i);
 	if (str[i])
 		return (2147483650);
 	return (res * sign);

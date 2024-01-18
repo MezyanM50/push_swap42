@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 11:24:55 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/18 14:33:49 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/18 15:54:56 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,20 @@ int	must_split(char *s)
 		i++;
 	}
 	return (count);
+}
+long	ft_atoi_helper(const char *str, int *i)
+{
+	long res;
+
+	res = 0;
+	while (str[*i] >= '0' && str[*i] <= '9')
+	{
+		if (res > 2147483647 / 10)
+			return (2147483650);
+		res = (res * 10) + (str[*i] - 48);
+		(*i)++;
+	}
+	return (res);	
 }
 
 unsigned int    count_args(char **str)

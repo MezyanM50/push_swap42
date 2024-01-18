@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:45:29 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/18 14:33:44 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/18 15:55:04 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct s_chunk
 int					check_for_double(t_stack *lst);
 void				fill_stack(char **str, t_stack **stack_a);
 long				ft_new_atoi(const char *str);
+long				ft_atoi_helper(const char *str, int *i);
 void				print_error(char *str);
 int					free_tab(char **tab);
 void				check_for_error(char **str);
