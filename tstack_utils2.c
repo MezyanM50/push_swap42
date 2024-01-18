@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:46:02 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/18 11:18:59 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/18 11:25:15 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,36 +59,6 @@ int	free_list(t_stack **lst)
 		free(tmp);
 	}
 	return (1);
-}
-int	must_split(char *s)
-{
-	int i;
-	int count;
-
-	i = 1;
-	count = 0;
-	while (s[i])
-	{
-		if (ft_isdigit(s[i]) && s[i - 1] == ' ')
-			count++;
-		i++;
-	}
-	return (count);
-}
-
-void split_it(char **str, char *s, int j, int size)
-{
-	int i;
-	char **tmp;
-	
-	tmp = ft_split(s, ' ');
-	i = 0;
-	while (tmp[i])
-	{
-		str[j] = tmp[i];
-		i++;
-		j++;
-	}
 }
 
 char	**alloc_str(char **argv, int argc)
