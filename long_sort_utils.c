@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:44:39 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/15 17:03:22 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/20 00:23:17 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	get_range(int size)
 		return (14);
 	else if (size <= 500)
 		return (35);
-	return (0);
+	return (45);
 }
 
 void	fill_and_sort_arr(t_chunk *chunk, t_stack **lst_a)

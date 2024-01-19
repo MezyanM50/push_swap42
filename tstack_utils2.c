@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:46:02 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/18 14:29:22 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/20 00:24:17 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,8 @@ char	**alloc_str(char **argv, int argc)
 		if (!tmp)
 			return (NULL);
 		while (tmp[k])
-			str[j++] = tmp[k++];
+			str[j++] = ft_strdup(tmp[k++]);
+		free_tab(tmp);
 		i++;
 	}
 	str[j] = NULL;

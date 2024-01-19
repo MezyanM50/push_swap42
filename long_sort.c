@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:44:46 by mmezyan           #+#    #+#             */
-/*   Updated: 2024/01/16 16:59:42 by mmezyan          ###   ########.fr       */
+/*   Updated: 2024/01/20 00:24:39 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,9 @@ void	sort_condition(t_stack **lst_a, t_stack **lst_b, t_chunk *chunk,
 void	long_sort(t_stack **lst_a, t_stack **lst_b)
 {
 	t_chunk	chunk;
-	int		i;
 	int		size;
 
 	size = list_size(*lst_a);
-	i = 0;
 	fill_and_sort_arr(&chunk, lst_a);
 	chunk.n = get_range(size);
 	chunk.start = 0;
